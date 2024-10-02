@@ -27,19 +27,17 @@ function HomeScreen({ navigation }: HomeScreenProps) {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Text style={styles.title}>Meu Portfólio</Text>
 
-        {/* Imagem centralizada */}
         <View style={styles.imageContainer}>
           <Image 
-            source={require('./assets/minha_foto2.jpeg')} // Substitua pelo caminho correto da imagem
+            source={require('./assets/minha_foto2.jpeg')}
             style={styles.image} 
           />
         </View>
 
-        {/* Texto "Sobre Mim" abaixo da imagem */}
         <View style={styles.section}>
           <Text style={styles.header}>Sobre Mim</Text>
           <Text style={styles.text}>
-          Olá, sou João Gabriel Reis Giannattasio, com 21 anos de idade. Sou um estudante dedicado, cursando duas faculdades simultaneamente: Análise e Desenvolvimento de Sistemas (ADS) na Positivo e Engenharia de Software na Unifil. Além disso, possuo um curso técnico em ADS pelo Instituto Senai, onde adquiri uma base sólida de conhecimentos na área.
+            Olá, sou João Gabriel Reis Giannattasio, com 21 anos de idade. Sou um estudante dedicado, cursando duas faculdades simultaneamente: Análise e Desenvolvimento de Sistemas (ADS) na Positivo e Engenharia de Software na Unifil. Além disso, possuo um curso técnico em ADS pelo Instituto Senai, onde adquiri uma base sólida de conhecimentos na área.
           </Text>
         </View>
 
@@ -74,26 +72,28 @@ function HomeScreen({ navigation }: HomeScreenProps) {
 function SkillsScreen() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <Text style={styles.title}>Minhas Habilidades</Text>
-      <Text style={styles.text2}>- Linguagens de Programação: Java, JavaScript</Text>
-      <Text style={styles.text2}>- Banco de Dados: SQL, MySQL</Text>
-      <Text style={styles.text2}>- Português (nativo), Inglês (Intermediário) e Italiano (Avançado)</Text>
+      <View style={styles.skillsContainer}> {/* Adicione esta View para o fundo */}
+        <Text style={styles.title}>Minhas Habilidades</Text>
+        <Text style={styles.text2}>- Linguagens de Programação: Java, JavaScript</Text>
+        <Text style={styles.text2}>- Banco de Dados: SQL, MySQL</Text>
+        <Text style={styles.text2}>- Português (nativo), Inglês (Intermediário) e Italiano (Avançado)</Text>
 
-      <Text style={styles.title}>Instituições de Ensino que frequentei</Text>
-      
-      <View style={styles.instituicao}>
-        <Text style={styles.text2}>- Senai: Curso técnico de ADS</Text>
-        <Image source={require('./assets/logo-senai.png')} style={styles.instituicaoLogo} />
-      </View>
-      
-      <View style={styles.instituicao}>
-        <Text style={styles.text2}>- Positivo: Cursando ADS</Text>
-        <Image source={require('./assets/logo-positivo.png')} style={styles.instituicaoLogo2} />
-      </View>
-      
-      <View style={styles.instituicao}>
-        <Text style={styles.text2}>- Unifil: Cursando Engenharia de Software</Text>
-        <Image source={require('./assets/logo-unifil.png')} style={styles.instituicaoLogo} />
+        <Text style={styles.title}>Instituições de Ensino que frequentei</Text>
+        
+        <View style={styles.instituicao}>
+          <Text style={styles.text2}>- Senai: Curso técnico de ADS</Text>
+          <Image source={require('./assets/logo-senai.png')} style={styles.instituicaoLogo} />
+        </View>
+        
+        <View style={styles.instituicao}>
+          <Text style={styles.text2}>- Positivo: Cursando ADS</Text>
+          <Image source={require('./assets/logo-positivo.png')} style={styles.instituicaoLogo2} />
+        </View>
+        
+        <View style={styles.instituicao}>
+          <Text style={styles.text2}>- Unifil: Cursando Engenharia de Software</Text>
+          <Image source={require('./assets/logo-unifil.png')} style={styles.instituicaoLogo} />
+        </View>
       </View>
     </ScrollView>
   );
@@ -113,7 +113,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F4A460',
   },
   scrollContainer: {
     padding: 20,
@@ -136,16 +136,18 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 30,
+    alignItems: 'center',  
   },
   header: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
+    textAlign: 'center',  
   },
   text: {
     fontSize: 16,
     lineHeight: 24,
-    textAlign: 'left',  
+    textAlign: 'center',  
   },
   text2: {
     fontSize: 24,
@@ -153,12 +155,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',  
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#FFFFFF',
     padding: 10,
     borderRadius: 5,
     marginVertical: 5,
     flexDirection: 'row',
     alignItems: 'center', 
+    justifyContent: 'center',
   },
   icon: {
     width: 20,
@@ -166,7 +169,7 @@ const styles = StyleSheet.create({
     marginRight: 10, 
   },
   buttonText: {
-    color: '#fff',
+    color: 'black',
     textAlign: 'center',
     fontSize: 16,
   },
@@ -184,5 +187,10 @@ const styles = StyleSheet.create({
     width: 250, 
     height: 125, 
     marginTop: 10, 
+  },
+  skillsContainer: {
+    flex: 1,
+    backgroundColor: '#F4A460',  
+    padding: 20,
   },
 });
